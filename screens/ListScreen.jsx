@@ -6,22 +6,17 @@ const ListScreen = () => {
   const [commands, setCommands] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = () => {
-    setLoading(true);
-    fetch('https://fine-twilight-astronaut.glitch.me/api/commands', {
-      method: 'GET',
-    })
-      .then(() => fetch('https://fine-twilight-astronaut.glitch.me/api/commands'))
-      .then((response) => response.json())
-      .then((data) => {
-        setCommands(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-      });
-  };
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://abiroptic.store/back-end/api.php');
+      const jsonData = await response.json();
+      setCommands(jsonData.data);
+      setLoading(false); // Définir loading à false après avoir récupéré les données
+    } catch (error) {
+      console.error('Erreur lors de la récupération des données :', error);
+      setLoading(false); // Définir loading à false en cas d'erreur
+    }
+  };  
 
   useEffect(() => {
     fetchData();
