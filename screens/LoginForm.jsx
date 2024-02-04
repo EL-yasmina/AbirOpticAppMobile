@@ -9,7 +9,7 @@ const LoginForm = ({ onLogin }) => {
 
   const handleLoginPress = () => {
     // Vérifier les informations de connexion ici
-    if (username === 'abir' && password === '123') {
+    if (username === 'abir' && password === '123456789') {
       onLogin(true); // Si les informations sont correctes, appeler onLogin avec true
     } else {
       // Afficher un message d'erreur ou effectuer une action en cas d'informations incorrectes
