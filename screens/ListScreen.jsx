@@ -8,10 +8,10 @@ const ListScreen = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://abiroptic.store/back-end/api.php');
-      const jsonData = await response.json();
-      setCommands(jsonData.data);
-      setLoading(false); // Définir loading à false après avoir récupéré les données
+      const response = await fetch('https://abiroptic.store/back-end/api.php');  //fetch effectuer une requete http asynchrone pour recupérer les données 
+      const jsonData = await response.json();                                    //recupérées les données au format json
+      setCommands(jsonData.data);  //stocker les données récupérées
+      setLoading(false); // ajuste le variable d'état loading à false après avoir récupéré les données, pour indiquer le chargement terminé)
     } catch (error) {
       console.error('Erreur lors de la récupération des données :', error);
       setLoading(false); // Définir loading à false en cas d'erreur
@@ -41,23 +41,23 @@ const ListScreen = () => {
   
     switch (status) {
       case 0:
-        borderColor = '#6c757d'; // Par exemple, bordure jaune pour le statut "En traitement"
+        borderColor = '#6c757d'; 
         break;
       case 1:
-        borderColor = '#198754'; // Par exemple, bordure verte pour le statut "Envoyé"
+        borderColor = '#198754'; 
         break;
       case 2:
-        borderColor = '#0dcaf0'; // Par exemple, bordure bleue pour le statut "Reçu"
+        borderColor = '#0dcaf0'; 
         break;
       case 3:
-        borderColor = '#dc35'; // Par exemple, bordure rouge pour le statut "Annulé"
+        borderColor = '#dc35'; 
         break;
       default:
-        borderColor = 'black'; // Couleur de bordure par défaut pour les autres statuts
+        borderColor = 'black'; 
         break;
     }
   
-    return { borderColor, borderWidth: 2 }; // Vous pouvez ajuster la largeur de la bordure selon vos préférences
+    return { borderColor, borderWidth: 2 }; 
   };
   return (
     <View style={styles.container}>

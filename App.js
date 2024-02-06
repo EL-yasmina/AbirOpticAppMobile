@@ -14,7 +14,7 @@ const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = (isLogged) => {
-    setLoggedIn(isLogged); // Mettre à jour l'état loggedIn en fonction du résultat de la connexion
+    setLoggedIn(isLogged); 
   };
 
   return (
@@ -30,12 +30,12 @@ const App = () => {
               ),
               headerLeft: () => (
                 <Image
-                  source={require('./assets/logo.png')} // Remplacez par le chemin de votre image logo
+                  source={require('./assets/logo.png')} 
                   style={styles.logo}
                 />
               ),
               headerTitleAlign: 'center',
-              headerTitle: 'Accueil', // Titre de l'en-tête
+              headerTitle: 'Accueil', 
             }}
           />
           <Tab.Screen
@@ -48,12 +48,12 @@ const App = () => {
               tabBarBadge:9,
               headerLeft: () => (
                 <Image
-                  source={require('./assets/logo.png')} // Remplacez par le chemin de votre image logo
+                  source={require('./assets/logo.png')} 
                   style={styles.logo}
                 />
               ),
               headerTitleAlign: 'center',
-              headerTitle: 'Commandes', // Titre de l'en-tête
+              headerTitle: 'Commandes', 
             }}
           />
           <Tab.Screen
@@ -64,12 +64,12 @@ const App = () => {
               ),
               headerLeft: () => (
                 <Image
-                  source={require('./assets/logo.png')} // Remplacez par le chemin de votre image logo
+                  source={require('./assets/logo.png')} 
                   style={styles.logo}
                 />
               ),
               headerTitleAlign: 'center',
-              headerTitle: 'Profile', // Titre de l'en-tête
+              headerTitle: 'Profile', 
             }}
           >
             {() => <ProfileScreen logout={handleLogin} />}
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    width: 100, // Ajustez la largeur selon vos besoins
+    width: 100, 
     height: 35,
     marginLeft:10
   },

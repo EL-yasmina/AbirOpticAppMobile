@@ -10,10 +10,10 @@ const LoginForm = ({ onLogin }) => {
   const handleLoginPress = () => {
     // Vérifier les informations de connexion ici
     if (username === 'abir' && password === '123456789') {
-      onLogin(true); // Si les informations sont correctes, appeler onLogin avec true
+      onLogin(true); 
     } else {
       // Afficher un message d'erreur ou effectuer une action en cas d'informations incorrectes
-      // Par exemple, vous pouvez réinitialiser les champs de saisie et afficher un message d'erreur
+      
       setUsername('');
       setPassword('');
       // Afficher un message d'erreur
@@ -46,8 +46,8 @@ const LoginForm = ({ onLogin }) => {
 };
 const styles = StyleSheet.create({
   logo: {
-    width: 200, // Ajustez la largeur selon vos besoins
-    height: 70, // Ajustez la hauteur selon vos besoins
+    width: 200, 
+    height: 70, 
     marginBottom:50
   },
 });
